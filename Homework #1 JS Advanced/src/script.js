@@ -10,9 +10,10 @@ document.getElementById('firstPerson')
                     .then(parsedData => {
                         console.log(parsedData);
                         let ime = document.getElementById('haEden');
-                        for (let item of parsedData.name) {
-                            ime.innerHTML += `<h1>${item}</h1>`
-                        }
+                        // for (let item of parsedData.name) {
+                        //     ime.innerHTML += `<h1>${item}</h1>`
+                        // }
+                        ime.innerHTML += `<h1>${parsedData.name}</h1>`
                     })
             })
 
@@ -48,7 +49,7 @@ document.getElementById('statsVoTabela')
 
 // ова подоле се обидов со бонус домашната ама заглавив...
 
-    
+
 const urlTwo = 'https://swapi.dev/api/people/?format=json'
 document.getElementById('allPersons')
     .addEventListener('click', function () {
@@ -57,10 +58,20 @@ document.getElementById('allPersons')
                 data.json()
                     .then(parsedData => {
                         console.log(parsedData);
-                        let iminja = document.getElementById('haDva');
+                        let theDiv = document.getElementById('theDiv');
                         for (let object of parsedData.results) {
-                            iminja.innerHTML += `<h2>${object}</h2>`
+                            theDiv.innerHTML += `<h2>${object.name}</h2>`
+
+                            theDiv.innerHTML += `<h3>${object.height}</h3>`
                         }
+
+
+
+
+                        // iminja.innerHTML += `<h2>${parsedData.results
+                        // }</h2>`
+
+
                     })
             })
 
@@ -69,24 +80,3 @@ document.getElementById('allPersons')
 
             })
     })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
